@@ -28,6 +28,8 @@ import nme.display.StageScaleMode;
 import nme.events.Event;
 import nme.events.MouseEvent;
 import nme.Lib;
+import com.gemioli.io.Socket;
+import com.gemioli.io.events.SocketEvent;
 
 class ExtensionTest extends Sprite
 {
@@ -49,6 +51,12 @@ class ExtensionTest extends Sprite
 		graphics.endFill();
 		
 		Lib.current.addEventListener(MouseEvent.CLICK, onMouseClick);
+		
+		var socket = new Socket("http://socketioserver-dimanux.dotcloud.com");
+		socket.addEventListener(SocketEvent.CONNECT, function(event : SocketEvent) : Void {
+			trace("Connected");
+		});
+		socket.connect();
 	}
 	
 	private function onMouseClick(event : MouseEvent) : Void

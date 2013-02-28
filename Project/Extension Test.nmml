@@ -19,6 +19,7 @@
 	<ndll name="nme" haxelib="nme" />
 	
 	<include path="../Extension" />
+	<include path="Extensions/socket.io-nme-client/Extension" />
 	
 	<setenv name="HXCPP_LOAD_DEBUG" value="1" />
 	

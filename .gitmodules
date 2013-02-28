@@ -1,0 +1,3 @@
+[submodule "Project/Extensions/socket.io-nme-client"]
+	path = Project/Extensions/socket.io-nme-client
+	url = https://github.com/dimanux/socket.io-nme-client
