@@ -48,26 +48,20 @@ pomelo.disconnect();
 ```
 
 ###ToDo:
-<ul>
-<li>Optimizations</li>
-</ul>
+* Optimizations
 
 ###Tested with HaXe 2.10, NME 3.5.5, HXCPP 2.10.3, nodejs 0.8.18 (or dotcloud) on platforms:
-<ul>
-<li>Flash 11</li>
-<li>HTML5</li>
-<li>Windows</li>
-<li>Android</li>
-<li>iOS (not tested)</li>
-<li>Blackberry (not tested)</li>
-</ul>
+* Flash 11
+* HTML5
+* Windows
+* Android
+* iOS (not tested)
+* Blackberry (not tested)
 
 ###Folders:
-<ul>
-<li>Extension - extension code</li>
-<li>Project - example project files</li>
-<li>Server - simple Pomelo server code (see [readme](https://github.com/dimanux/pomelo-nme-client/tree/master/Server))</li>
-</ul>
+* Extension - extension code
+* Project - example project files
+* Server - simple Pomelo server code (see [readme](https://github.com/dimanux/pomelo-nme-client/tree/master/Server))
 
 ###Example:
 See [example](https://github.com/dimanux/pomelo-nme-client/blob/master/Project/Source/com/gemioli/ExtensionTest.hx)
