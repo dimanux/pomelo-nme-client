@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Pomelo server test
+    </title>
+    <script src="js/lib/socket.io.js" ></script>
+    <script src="js/lib/pomeloclient.js" ></script>
+    <script type="text/javascript">
+      var pomelo = window.pomelo;
+      var host = "127.0.0.1";
+      var port = "8080";
+      function show() {
+        pomelo.init({
+          host: host,
+          port: port,
+          log: true
+        }, function() {
+        pomelo.request("connector.entryHandler.entry", function(data) {
+            alert(data.msg);
+          });
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <input id="test" type="button" value="Test Game Server" onclick="show()"/>
+  </body>
+</html>
