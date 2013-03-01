@@ -39,6 +39,8 @@ Visit you web server path like this http://pomeloclient-dimanux.dotcloud.com/
 
 ### License
 
+(The MIT License)
+
 Copyright (c) 2013, Dmitriy Kapustin (dimanux), gemioli.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
