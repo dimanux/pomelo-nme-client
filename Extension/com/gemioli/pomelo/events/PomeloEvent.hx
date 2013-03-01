@@ -20,14 +20,22 @@
  * THE SOFTWARE.
  */
 
- package com.gemioli.pomelo;
- 
- import nme.events.EventDispatcher;
- 
- class Client extends nme.events.EventDispatcher
- {
-	 public function new()
-	 {
-		 super();
-	 }
- }
+package com.gemioli.pomelo.events;
+
+import nme.events.Event;
+
+class PomeloEvent extends Event
+{
+	public static var CONNECT : String = "connect";
+	public static var DISCONNECT : String = "disconnect";
+	public static var ERROR : String = "error";
+	
+	public var data : Dynamic;
+
+	public function new(type : String, data : Dynamic = null) 
+	{
+		super(type, false, false);
+		
+		this.data = data;
+	}
+}

@@ -18,6 +18,7 @@
     <class path="Source" />
     <class path="C:\Motion-Twin\haxe\lib/nme/3,5,5/" />
     <class path="../Extension" />
+    <class path="Extensions/socket.io-nme-client/Extension" />
     <class path="Export/flash/haxe" />
   </classpaths>
   <!-- Build options -->

@@ -22,14 +22,14 @@
 
 package com.gemioli;
 
+import com.gemioli.pomelo.events.PomeloEvent;
+import com.gemioli.pomelo.Pomelo;
 import nme.display.Sprite;
 import nme.display.StageAlign;
 import nme.display.StageScaleMode;
 import nme.events.Event;
 import nme.events.MouseEvent;
 import nme.Lib;
-import com.gemioli.io.Socket;
-import com.gemioli.io.events.SocketEvent;
 
 class ExtensionTest extends Sprite
 {
@@ -50,18 +50,30 @@ class ExtensionTest extends Sprite
 		graphics.drawRect( -20, -20, 40, 40);
 		graphics.endFill();
 		
-		Lib.current.addEventListener(MouseEvent.CLICK, onMouseClick);
+		var host = "localhost";
+		var port = 8080;
+		//var host = "pomeloserver-dimanux.dotcloud.com";
+		//var port = 80;
 		
-		var socket = new Socket("http://socketioserver-dimanux.dotcloud.com");
-		socket.addEventListener(SocketEvent.CONNECT, function(event : SocketEvent) : Void {
-			trace("Connected");
+		_pomelo = new Pomelo();
+		
+		_pomelo.addEventListener(PomeloEvent.ERROR, function(event : PomeloEvent) {
+			trace("Pomelo error: " + event.data);
 		});
-		socket.connect();
-	}
-	
-	private function onMouseClick(event : MouseEvent) : Void
-	{
-		trace("Hello");
+		
+		_pomelo.init({
+			host : host,
+			port : port }, function() : Void {
+				trace("Pomelo connected.");
+				
+				_pomelo.addEventListener(PomeloEvent.DISCONNECT, function(event : PomeloEvent) {
+					trace("Pomelo disconnected.");
+				});
+		
+				_pomelo.request("connector.entryHandler.entry", null/*message*/, function(data : Dynamic) : Void {
+					trace(data.msg);
+				});
+			});
 	}
 	
 	private function onUpdate(e:Event) : Void
@@ -79,4 +91,6 @@ class ExtensionTest extends Sprite
 		
 		Lib.current.addChild(new ExtensionTest ());
 	}
+	
+	private var _pomelo : Pomelo;
 }
