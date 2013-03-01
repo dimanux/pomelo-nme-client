@@ -15,22 +15,29 @@ Simple Pomelo server for tests.
 1. Register on http://www.dotcloud.com and create new application via dashboard. For example, it will have a 'pomeloserver' name.
 2. Follow instructions on dotcloud website to install CLI.
 3. Open cygwin:
-```
+
+```bat
 cd game-server
 dotcloud connect pomeloserver
 dotcloud push
 ```
+
 Game server will start automatically and you can view logs via 'dotcloud logs' command.
+
 4. Then create new application for web server. For example, it will have a 'pomeloclient' name.
 5. Open web-server/index.html file and edit host of the game server to your game server host. In our example, it's pomeloserver-dimanux.dotcloud.com (pomeloserver-YOURNAME.dotcloud.com).
 6. Open cygwin:
-```
+
+```bat
 cd web-server
 dotcloud connect pomeloclient
 dotcloud env set NODE_ENV=production
 dotcloud push
 ```
-7. Visit you web server path like this http://pomeloclient-dimanux.dotcloud.com/
+
+Visit you web server path like this http://pomeloclient-dimanux.dotcloud.com/
+
+### License
 
 Copyright (c) 2013, Dmitriy Kapustin (dimanux), gemioli.com
 
